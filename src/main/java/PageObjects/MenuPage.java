@@ -3,7 +3,9 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MenuPage {
+import SeleniumUtils.SeleniumWrappers;
+
+public class MenuPage extends SeleniumWrappers{
 	
 	public WebDriver driver;
 	
@@ -29,9 +31,9 @@ public class MenuPage {
 		
 	
 		//loginButton().click()
-		public void navigateTo(By locator) {
-				driver.findElement(locator).click();
-			}
+	//	public void navigateTo(By locator) {
+		//		driver.findElement(locator).click();
+		//	}
 			//navigateTo(contactsLink)
 			//navigateTo(loginLink)
 			

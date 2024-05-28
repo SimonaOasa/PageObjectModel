@@ -20,12 +20,15 @@ public class LoginTest extends BaseTest{
 		
 		MenuPage menu = new MenuPage(driver);
 		
-		menu.navigateTo(menu.loginLink);
+		//menu.navigateTo(menu.loginLink);
+		menu.click(menu.loginLink);
 		LoginPage login = new LoginPage(driver);
-		login.loginInApp(USER, PASS);
 		Thread.sleep(2000);
+		login.loginInApp(USER, PASS);
+		
 		assertTrue(login.checkMsgIsDisplayed(login.successLoginMsg));
-		login.logoutFromApp();
+		login.click(login.logoutBtn);
+		//login.logoutFromApp();
 	}
 	
 	@Test(priority=2)
@@ -33,7 +36,8 @@ public class LoginTest extends BaseTest{
 		
 		MenuPage menu = new MenuPage(driver);
 		
-		menu.navigateTo(menu.loginLink);
+		//menu.navigateTo(menu.loginLink);
+		menu.click(menu.loginLink);
 		LoginPage login = new LoginPage(driver);
 		login.loginInApp(USER, "12312313");
 		Thread.sleep(2000);
