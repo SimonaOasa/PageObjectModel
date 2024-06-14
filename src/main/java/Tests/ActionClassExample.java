@@ -12,7 +12,7 @@ import SeleniumUtils.BaseTest;
 
 public class ActionClassExample extends BaseTest {
 
-	@Test
+	//@Test
 	public void hoverElementTest() throws InterruptedException {
 		app.hoverElement(app.menu.blogLink);
 		Thread.sleep(3000);
@@ -23,7 +23,7 @@ public class ActionClassExample extends BaseTest {
 		app.hoverElement(app.menu.aboutLink);
 	}
 	
-	@Test
+	//@Test
 	public void sendKeysTest() {
 		
 		app.click(app.menu.contactsLink);
@@ -53,7 +53,7 @@ public class ActionClassExample extends BaseTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void sendMessageForm() {
 		
 		app.click(app.menu.contactsLink);
@@ -74,5 +74,18 @@ public class ActionClassExample extends BaseTest {
 		  
 		.perform();  
 		
+	}
+	
+	@Test
+	public void dragAndDropExample() {
+		
+		app.click(app.menu.shopLink);
+		app.hoverElement(app.shop.filterSliderInitialPosition);
+		
+		Actions action = new Actions(driver);
+		action.scrollByAmount(0, 600).perform();
+		
+		app.dragAndDrop(app.shop.filterSliderInitialPosition, 100, 0);
+		app.dragAndDrop(app.shop.filterSliderFinalPosition, -100, 0);
 	}
 }

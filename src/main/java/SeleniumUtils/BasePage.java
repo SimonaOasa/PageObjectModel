@@ -1,6 +1,7 @@
 package SeleniumUtils;
 
 import PageObjects.ContactsPage;
+import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import PageObjects.MenuPage;
 import PageObjects.ShopPage;
@@ -14,5 +15,7 @@ public class BasePage extends SeleniumWrappers{
 	public LoginPage login = new LoginPage(driver);
 	public ContactsPage contacts = new ContactsPage(driver);
 	public ShopPage shop = new ShopPage(driver);
+	public HomePage home = new HomePage(driver);
+	
 	
 }
