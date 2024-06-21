@@ -4,7 +4,7 @@
         <groups>
             <run>
                <exclude name = "ShopFunctionality"/>
-               <include name = "UserManagementFunctionality"/>
+               <include name = "UserMangementFunctionality"/>
            
             </run>
         </groups>
