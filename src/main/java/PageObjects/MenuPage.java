@@ -49,6 +49,14 @@ public class MenuPage extends SeleniumWrappers{
 			public void navigateToContacs() {
 				loginButton.click();
 			}*/
+		
+		public void search(String value) {
+			
+			click(searchIcon);
+			sendKeys(searchInput, value);
+			click(searchIcon);
+
+		}
 	
 
 }

@@ -33,7 +33,17 @@ public class SeleniumWrappers extends BaseTest {
 	
 	public void sendKeys(By locator, String text ) {
 		
-		driver.findElement(locator).sendKeys(text);
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration. ofSeconds(5));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			WebElement element = driver.findElement(locator);
+			element.clear();
+			element.sendKeys(text);
+			
+		}catch(NoSuchElementException e) {
+			
+			
+		}
 		
 	}
 	
